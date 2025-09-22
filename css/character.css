@@ -1,1 +1,179 @@
 /* キャラクター用 CSS */
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/-obs.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/-scrollbar.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/board.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/boardBackground.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/chat.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/cutIn.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/edit.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/header.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/modal.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/monitoring.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/newDice.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/scaling.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/timer.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/volume.css");
+
+/* フォント */
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+
+/* 変数等の設定 */
+:root {
+    /* ゲージの大きさ */
+    --status-width: 160px;
+    --status-height: 10px;
+
+    /* ゲージの色 */
+    --color-gauge-hp: rgb(131, 253, 65);
+    --color-gauge-mp: rgb(65, 164, 253);
+    --color-gauge-san: black;
+
+    /* テキストの位置 */
+    --text-offset-left: 55px;
+    --text-offset-top: -30px;
+    --label-offset-left: 2px;
+    --label-offset-top: 20px;
+    --value-offset-left: 62px;
+    --value-offset-top: 15px;
+
+    /* テキストの色 */
+    --color-text-hp: rgb(79, 153, 39);
+    --color-text-mp: rgb(39, 100, 253);
+    --color-text-san: black;
+
+    /* テキストの縁取り */
+    --text-border-color: rgb(245, 245, 245);
+    --text-border-width: 1px;
+    --text-border:
+        var(--text-border-color) var(--text-border-width) var(--text-border-width) 0px,
+        var(--text-border-color) calc(0px - var(--text-border-width)) calc(0px - var(--text-border-width)) 0px,
+        var(--text-border-color) calc(0px - var(--text-border-width)) var(--text-border-width) 0px,
+        var(--text-border-color) var(--text-border-width) calc(0px - var(--text-border-width)) 0px,
+        var(--text-border-color) 0px var(--text-border-width) 0px,
+        var(--text-border-color) 0px calc(0px - var(--text-border-width)) 0px,
+        var(--text-border-color) calc(0px - var(--text-border-width)) 0px 0px,
+        var(--text-border-color) var(--text-border-width) 0px 0px;
+}
+
+/* 表示位置の調整 */
+#root > div > div > div {
+    top: 30px;
+    left: 40px;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    overflow: visible;
+}
+
+/* 表示間隔の調整 */
+#root > div > div > div > div {
+    margin-bottom: 30px;
+}
+
+/* キャラ画像 */
+.MuiAvatar-root {
+    width: 120px;
+    height: 120px;
+    background: rgba(0, 0, 0, 0);
+    border: 0px solid rgba(0, 0, 0, 0);
+    border-radius: 0px;
+}
+
+/* イニシアチブ */
+.MuiBadge-badge.MuiBadge-standard {
+    top: 120px;
+    left: 250px;
+    background: rgba(0, 0, 0, 0);
+    font-size: 32pt;
+    font-family: "Playball", serif !important;
+    font-weight: 900 !important;
+    font-style: italic !important;
+    text-shadow: var(--text-border);
+}
+
+/* 個別ステータス */
+.MuiBadge-root + div > div { display: inline; }
+.MuiBadge-root + div > div > div:nth-of-type(1) { left: -20px; top: 30px; }
+.MuiBadge-root + div > div > div:nth-of-type(2) { left: -40px; top: 50px; }
+.MuiBadge-root + div > div > div:nth-of-type(3) { left: -60px; top: 70px; }
+
+/* 個別ステータス: 文字情報 */
+.MuiBadge-root + div > div > div > div:nth-of-type(1) {
+    left: var(--text-offset-left);
+    top: var(--text-offset-top);
+}
+
+/* 個別ステータス: 文字のラベルの部分 */
+.MuiBadge-root + div > div > div > div:nth-of-type(1) > p:nth-of-type(1) {
+    overflow: visible;
+    position: absolute;
+    text-align: right;
+    left: var(--label-offset-left);
+    top: var(--label-offset-top);
+    width: 100px;
+    font-size: 12pt;
+    font-family: "Italianno", serif !important;
+    font-weight: 900 !important;
+    font-style: italic !important;
+    text-shadow: var(--text-border);
+    z-index: 300;
+}
+.MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1) { color: var(--color-text-hp); }
+.MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) { color: var(--color-text-mp); }
+.MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1) { color: var(--color-text-san); }
+
+/* 個別ステータス: 文字の分母の部分 */
+.MuiBadge-root + div > div > div > div:nth-of-type(1) > p:nth-of-type(2) {
+    overflow: visible;
+    position: absolute;
+    left: var(--value-offset-left);
+    top: var(--value-offset-top);
+    font-size: 18pt;
+    font-family: "Italianno", serif !important;
+    font-weight: 900 !important;
+    font-style: italic !important;
+    text-shadow: var(--text-border);
+    z-index: 250;
+}
+.MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) { color: var(--color-text-hp); }
+.MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) { color: var(--color-text-mp); }
+.MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) { color: var(--color-text-san); }
+
+
+/* 個別ステータス: 文字の分子の部分 */
+.MuiBadge-root + div > div > div > div:nth-of-type(1) > p:nth-of-type(2) > span {
+    overflow: visible;
+    position: absolute;
+    text-align: right;
+    left: calc(0px - var(--value-offset-left));
+    top: calc(0px - var(--value-offset-top));
+    width: 50px;
+    font-size: 24pt;
+    font-family: "Italianno", serif !important;
+    font-weight: 900 !important;
+    font-style: italic !important;
+    text-shadow: var(--text-border);
+    z-index: 200;
+}
+.MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) > span { color: var(--color-text-hp); }
+.MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) > span { color: var(--color-text-mp); }
+.MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) > span { color: var(--color-text-san); }
+
+/* 個別ステータス: ゲージの部分の大枠 */
+.MuiBadge-root + div > div > div > div:nth-of-type(2) {
+    width: var(--status-width);
+    height: var(--status-height);
+    border: 2px solid rgb(245, 245, 245);
+}
+
+/* 個別ステータス: ゲージの部分の前景 */
+.MuiBadge-root + div > div > div > div:nth-of-type(2) > div:nth-of-type(2) { height: var(--status-height); }
+.MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) { background-color: var(--color-gauge-hp); }
+.MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) { background-color: var(--color-gauge-mp); }
+.MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) { background-color: var(--color-gauge-san); }
+
+/* 個別ステータス: ゲージの部分の背景 */
+.MuiBadge-root + div > div > div > div:nth-of-type(2) > div:nth-of-type(1) {
+    width: var(--status-width);
+    height: var(--status-height);
+}
