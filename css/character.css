@@ -28,19 +28,21 @@
     --color-gauge-hp: rgb(65, 253, 81);
     --color-gauge-mp: rgb(65, 168, 253);
     --color-gauge-san: rgb(65, 109, 253);
+    --color-gauge-ex: rgb(65, 109, 253);
 
     /* テキストの位置 */
     --text-offset-left: 55px;
-    --text-offset-top: -30px;
+    --text-offset-top: -28px;
     --label-offset-left: 2px;
-    --label-offset-top: 20px;
+    --label-offset-top: 18px;
     --value-offset-left: 62px;
-    --value-offset-top: 15px;
+    --value-offset-top: 13px;
 
     /* テキストの色 */
     --color-text-hp: rgb(39, 153, 64);
     --color-text-mp: rgb(39, 117, 153);
     --color-text-san: rgb(39, 89, 253);
+    --color-text-ex: rgb(39, 89, 253);
 
     /* テキストの縁取り */
     --text-border-color: rgb(245, 245, 245);
@@ -82,8 +84,8 @@
 
 /* イニシアチブ */
 .MuiBadge-badge.MuiBadge-standard {
-    top: 120px;
-    left: 250px;
+    top: 110px;
+    left: 240px;
     background: rgba(0, 0, 0, 0);
     font-size: 32pt;
     font-family: "Playball", serif !important;
@@ -94,9 +96,11 @@
 
 /* 個別ステータス */
 .MuiBadge-root + div > div { display: inline; }
-.MuiBadge-root + div > div > div:nth-of-type(1) { left: -20px; top: 15px; }
-.MuiBadge-root + div > div > div:nth-of-type(2) { left: -40px; top: 35px; }
-.MuiBadge-root + div > div > div:nth-of-type(3) { left: -60px; top: 55px; }
+.MuiBadge-root + div > div > div:nth-of-type(1) { left: +10px; top: -5px; }
+.MuiBadge-root + div > div > div:nth-of-type(2) { left: -20px; top: 10px; }
+.MuiBadge-root + div > div > div:nth-of-type(3) { left: -50px; top: 25px; }
+.MuiBadge-root + div > div > div:nth-of-type(4) { left: -80px; top: 40px; }
+.MuiBadge-root + div > div > div:nth-of-type(n+5) { display: none; }
 
 /* 個別ステータス: 文字情報 */
 .MuiBadge-root + div > div > div > div:nth-of-type(1) {
@@ -122,6 +126,7 @@
 .MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1) { color: var(--color-text-hp); }
 .MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) { color: var(--color-text-mp); }
 .MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1) { color: var(--color-text-san); }
+.MuiBadge-root + div > div > div:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) { color: var(--color-text-ex); }
 
 /* 個別ステータス: 文字の分母の部分 */
 .MuiBadge-root + div > div > div > div:nth-of-type(1) > p:nth-of-type(2) {
@@ -139,6 +144,7 @@
 .MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) { color: var(--color-text-hp); }
 .MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) { color: var(--color-text-mp); }
 .MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) { color: var(--color-text-san); }
+.MuiBadge-root + div > div > div:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) { color: var(--color-text-ex); }
 
 
 /* 個別ステータス: 文字の分子の部分 */
@@ -159,6 +165,7 @@
 .MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) > span { color: var(--color-text-hp); }
 .MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) > span { color: var(--color-text-mp); }
 .MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) > span { color: var(--color-text-san); }
+.MuiBadge-root + div > div > div:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) > span { color: var(--color-text-ex); }
 
 /* 個別ステータス: ゲージの部分の大枠 */
 .MuiBadge-root + div > div > div > div:nth-of-type(2) {
@@ -172,6 +179,7 @@
 .MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) { background-color: var(--color-gauge-hp); }
 .MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) { background-color: var(--color-gauge-mp); }
 .MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) { background-color: var(--color-gauge-san); }
+.MuiBadge-root + div > div > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(2) { background-color: var(--color-gauge-ex); }
 
 /* 個別ステータス: ゲージの部分の背景 */
 .MuiBadge-root + div > div > div > div:nth-of-type(2) > div:nth-of-type(1) {
