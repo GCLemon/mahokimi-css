@@ -1,6 +1,7 @@
 /* キャラクター用 CSS */
 @import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/-obs.css");
 @import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/-scrollbar.css");
+@import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/balloon.css");
 @import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/board.css");
 @import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/boardBackground.css");
 @import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/chat.css");
@@ -93,9 +94,9 @@
 
 /* 個別ステータス */
 .MuiBadge-root + div > div { display: inline; }
-.MuiBadge-root + div > div > div:nth-of-type(1) { left: -20px; top: 30px; }
-.MuiBadge-root + div > div > div:nth-of-type(2) { left: -40px; top: 50px; }
-.MuiBadge-root + div > div > div:nth-of-type(3) { left: -60px; top: 70px; }
+.MuiBadge-root + div > div > div:nth-of-type(1) { left: -20px; top: 15px; }
+.MuiBadge-root + div > div > div:nth-of-type(2) { left: -40px; top: 35px; }
+.MuiBadge-root + div > div > div:nth-of-type(3) { left: -60px; top: 55px; }
 
 /* 個別ステータス: 文字情報 */
 .MuiBadge-root + div > div > div > div:nth-of-type(1) {
