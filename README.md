@@ -6,7 +6,7 @@
 ブラウザソースを新規作成し、サイズを幅 400 × 高さ 1080 に設定。
 『カスタム CSS』に以下を入力。
 ```css
-@import("https://gclemon.github.io/mahokimi-css/css/character.css");
+@import url("https://gclemon.github.io/mahokimi-css/css/character.css");
 ```
 作成したブラウザソースを画面左端にピッタリくっつくように配置。
 
@@ -14,7 +14,7 @@
 ブラウザソースを新規作成し、サイズを幅 400 × 高さ 1128 に設定。
 『カスタム CSS』に以下を入力。
 ```css
-@import("https://gclemon.github.io/mahokimi-css/css/chat-window.css");
+@import url("https://gclemon.github.io/mahokimi-css/css/chat-window.css");
 ```
 作成したブラウザソースを画面左端 & 上端にピッタリくっつくように配置。  
 ブラウザソースの対話機能で雑談タブに切り替え、チャット部分を上までスクロールすると奇麗。
@@ -23,7 +23,7 @@
 ブラウザソースを新規作成し、サイズを幅 1040 × 高さ 1080 に設定。
 『カスタム CSS』に以下を入力。
 ```css
-@import("https://gclemon.github.io/mahokimi-css/css/text-window.css");
+@import url("https://gclemon.github.io/mahokimi-css/css/text-window.css");
 ```
 作成したブラウザソースを適当に弄ると、画面中央にきれいに配置されるはず。
 
