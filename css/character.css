@@ -25,9 +25,9 @@
     --status-height: 10px;
 
     /* ゲージの色 */
-    --color-gauge-hp: rgb(131, 253, 65);
-    --color-gauge-mp: rgb(65, 164, 253);
-    --color-gauge-san: black;
+    --color-gauge-hp: rgb(65, 253, 81);
+    --color-gauge-mp: rgb(65, 168, 253);
+    --color-gauge-san: rgb(65, 109, 253);
 
     /* テキストの位置 */
     --text-offset-left: 55px;
@@ -38,9 +38,9 @@
     --value-offset-top: 15px;
 
     /* テキストの色 */
-    --color-text-hp: rgb(79, 153, 39);
-    --color-text-mp: rgb(39, 100, 253);
-    --color-text-san: black;
+    --color-text-hp: rgb(39, 153, 64);
+    --color-text-mp: rgb(39, 117, 153);
+    --color-text-san: rgb(39, 89, 253);
 
     /* テキストの縁取り */
     --text-border-color: rgb(245, 245, 245);
