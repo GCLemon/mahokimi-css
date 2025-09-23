@@ -16,11 +16,15 @@
 @import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/volume.css");
 
 :root {
+    --balloon-width: 960px;
+    --balloon-height: 240px;
     --image-width: 240px;
     --image-height: 240px;
+    --padding-vert: 8px;
+    --padding-horiz: 8px;
     --background-color: rgb(0, 0, 0);
-    --font-color: rgb(255, 255, 255);
-    --font-color-dice: rgba(255, 255, 255, 0.7);
+    --border-color: rgb(245, 245, 245);
+    --font-color: rgb(245, 245, 245);
     --font-color-success: rgb(33, 150, 243);
     --font-color-failure: rgb(245, 0, 87);
     --font-size-text: 1.5rem;
@@ -29,47 +33,49 @@
 
 /* カスタム用 */
 div[tabindex="0"] > .MuiPaper-root {
-    background-color: transparent;
-    left: 30px;
-    right: 30px;
+    display: block;
+    left: 39px;
+    right: 39px;
     bottom: 20px;
+    max-width: var(--balloon-width);
+    max-height: var(--balloon-height);
     margin: 0px;
+    border: 2px solid var(--border-color);
+    background: var(--background-color);
     overflow: visible;
-    z-index: 100;
+    box-shadow: 0;
+    z-index: 0;
 }
 
 /* アイコン */
 .MuiPaper-root > img {
     display: block;
-    right: calc(var(--image-width) / 2);
-    bottom: calc(var(--image-width) / 2);
-    width: var(--image-width);
-    height: var(--image-height);
+    bottom: 0px;
+    left: calc(var(--balloon-width) - var(--padding-horiz) - var(--image-width));
+    width: calc(var(--image-width) - 4px);
+    height: calc(var(--image-height) - 4px);
     margin: 0px;
     border: 0px;
     object-fit: cover;
     object-position: top;
     z-index: 200;
+    opacity: 0.5;
 }
 .MuiPaper-root > img[src=""] {
     display: none;
 }
 
 .MuiPaper-root > .MuiPaper-root {
-    width: 960px;
-    height: 240px;
+    width: calc(var(--balloon-width) - var(--padding-horiz) * 2);
+    height: calc(var(--balloon-height) - var(--padding-vert) * 2);
     margin: 0px;
-    border: 2px solid rgb(245, 245, 245);
     border-radius: 0px;
-    padding: 8px 12px;
-    background: var(--background-color);
+    padding: var(--padding-vert) var(--padding-horiz);
+    background: transparent;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     z-index: 300;
-}
-.MuiPaper-elevation1 {
-    box-shadow: var(--balloon-border-shadow);
 }
 
 /* 名前 */
@@ -77,6 +83,7 @@ div[tabindex="0"] > .MuiPaper-root {
     display: block;
     font-size: var(--font-size-name);
     color: var(--font-color);
+    z-index: 300;
 }
 
 /* ダイス結果 */
@@ -84,29 +91,42 @@ div[tabindex="0"] > .MuiPaper-root {
     display: block;
     font-size: var(--font-size-name);
     color: var(--font-color);
+    z-index: 300;
 }
 
 /* ダイス結果 (成功) */
 .css-1l6qhgm {
     color: var(--font-color);
-    text-shadow: var(--font-color-success);
+    text-shadow:
+        0px 0px 2px var(--font-color-success),
+        0px 0px 4px var(--font-color-success),
+        0px 0px 8px var(--font-color-success),
+        0px 0px 8px var(--font-color-success);
+    z-index: 300;
 }
 
 /* ダイス結果 (失敗) */
 .css-1j13mke {
     color: var(--font-failure);
-    text-shadow: var(--font-color-success);
+    text-shadow:
+        0px 0px 2px var(--font-color-failure),
+        0px 0px 4px var(--font-color-failure),
+        0px 0px 8px var(--font-color-failure),
+        0px 0px 8px var(--font-color-failure);
+    z-index: 300;
 }
 
 /* 本文 */
 .MuiTypography-body1 {
     font-size: var(--font-size-text);
     color: var(--font-color);
+    z-index: 300;
 }
 
 /* ダイス */
 .MuiPaper-root > .MuiPaper-root > div:nth-child(1) {
     margin-bottom: var(--image-margin);
+    z-index: 300;
 }
 
 /* ボタンは非表示に */
