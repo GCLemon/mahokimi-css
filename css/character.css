@@ -25,10 +25,9 @@
     --status-height: 10px;
 
     /* ゲージの色 */
-    --color-gauge-hp: rgb(65, 253, 81);
-    --color-gauge-mp: rgb(65, 168, 253);
-    --color-gauge-san: rgb(65, 109, 253);
-    --color-gauge-ex: rgb(65, 109, 253);
+    --color-gauge-hp: #34bd6d;
+    --color-gauge-mp: #11a3cf;
+    --color-gauge-san: #2b77e7;
 
     /* テキストの位置 */
     --text-offset-left: 55px;
@@ -39,10 +38,11 @@
     --value-offset-top: 13px;
 
     /* テキストの色 */
-    --color-text-hp: rgb(39, 153, 64);
-    --color-text-mp: rgb(39, 117, 153);
-    --color-text-san: rgb(39, 89, 253);
+    --color-text-hp: #34bd6d;
+    --color-text-mp: #11a3cf;
+    --color-text-san: #2b77e7;
     --color-text-ex: rgb(39, 89, 253);
+    --color-text-ini: rgb(39, 89, 253);
 
     /* テキストの縁取り */
     --text-border-color: rgb(245, 245, 245);
@@ -101,6 +101,7 @@
     top: 130px;
     left: 235px;
     background: rgba(0, 0, 0, 0);
+    color: var(--color-text-ini);
     font-size: 32pt;
     font-family: "Playball", serif !important;
     font-weight: 900 !important;
