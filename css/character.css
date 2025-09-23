@@ -84,8 +84,8 @@
 
 /* イニシアチブ */
 .MuiBadge-badge.MuiBadge-standard {
-    top: 110px;
-    left: 240px;
+    top: 130px;
+    left: 235px;
     background: rgba(0, 0, 0, 0);
     font-size: 32pt;
     font-family: "Playball", serif !important;
@@ -95,11 +95,14 @@
 }
 
 /* 個別ステータス */
-.MuiBadge-root + div > div { display: inline; }
-.MuiBadge-root + div > div > div:nth-of-type(1) { left: +10px; top: -5px; }
-.MuiBadge-root + div > div > div:nth-of-type(2) { left: -20px; top: 10px; }
-.MuiBadge-root + div > div > div:nth-of-type(3) { left: -50px; top: 25px; }
-.MuiBadge-root + div > div > div:nth-of-type(4) { left: -80px; top: 40px; }
+.MuiBadge-root + div > div {
+    display: inline;
+    position: relative;
+}
+.MuiBadge-root + div > div > div { position: absolute; }
+.MuiBadge-root + div > div > div:nth-of-type(1) { left: -20px; top: 46px; }
+.MuiBadge-root + div > div > div:nth-of-type(2) { left: -40px; top: 78px; }
+.MuiBadge-root + div > div > div:nth-of-type(3) { left: -60px; top: 110px; }
 .MuiBadge-root + div > div > div:nth-of-type(n+5) { display: none; }
 
 /* 個別ステータス: 文字情報 */
@@ -109,7 +112,9 @@
 }
 
 /* 個別ステータス: 文字のラベルの部分 */
-.MuiBadge-root + div > div > div > div:nth-of-type(1) > p:nth-of-type(1) {
+.MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1),
+.MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1),
+.MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1) {
     overflow: visible;
     position: absolute;
     text-align: right;
@@ -117,7 +122,7 @@
     top: var(--label-offset-top);
     width: 100px;
     font-size: 12pt;
-    font-family: "Italianno", serif !important;
+    font-family: "Playball", serif !important;
     font-weight: 900 !important;
     font-style: italic !important;
     text-shadow: var(--text-border);
@@ -126,16 +131,17 @@
 .MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1) { color: var(--color-text-hp); }
 .MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) { color: var(--color-text-mp); }
 .MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1) { color: var(--color-text-san); }
-.MuiBadge-root + div > div > div:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) { color: var(--color-text-ex); }
 
 /* 個別ステータス: 文字の分母の部分 */
-.MuiBadge-root + div > div > div > div:nth-of-type(1) > p:nth-of-type(2) {
+.MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2),
+.MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2),
+.MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) {
     overflow: visible;
     position: absolute;
     left: var(--value-offset-left);
     top: var(--value-offset-top);
     font-size: 18pt;
-    font-family: "Italianno", serif !important;
+    font-family: "Playball", serif !important;
     font-weight: 900 !important;
     font-style: italic !important;
     text-shadow: var(--text-border);
@@ -144,11 +150,11 @@
 .MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) { color: var(--color-text-hp); }
 .MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) { color: var(--color-text-mp); }
 .MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) { color: var(--color-text-san); }
-.MuiBadge-root + div > div > div:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) { color: var(--color-text-ex); }
-
 
 /* 個別ステータス: 文字の分子の部分 */
-.MuiBadge-root + div > div > div > div:nth-of-type(1) > p:nth-of-type(2) > span {
+.MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) > span,
+.MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) > span,
+.MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) > span {
     overflow: visible;
     position: absolute;
     text-align: right;
@@ -156,7 +162,7 @@
     top: calc(0px - var(--value-offset-top));
     width: 50px;
     font-size: 24pt;
-    font-family: "Italianno", serif !important;
+    font-family: "Playball", serif !important;
     font-weight: 900 !important;
     font-style: italic !important;
     text-shadow: var(--text-border);
@@ -165,7 +171,6 @@
 .MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) > span { color: var(--color-text-hp); }
 .MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) > span { color: var(--color-text-mp); }
 .MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(2) > span { color: var(--color-text-san); }
-.MuiBadge-root + div > div > div:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) > span { color: var(--color-text-ex); }
 
 /* 個別ステータス: ゲージの部分の大枠 */
 .MuiBadge-root + div > div > div > div:nth-of-type(2) {
@@ -179,10 +184,55 @@
 .MuiBadge-root + div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) { background-color: var(--color-gauge-hp); }
 .MuiBadge-root + div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) { background-color: var(--color-gauge-mp); }
 .MuiBadge-root + div > div > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) { background-color: var(--color-gauge-san); }
-.MuiBadge-root + div > div > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(2) { background-color: var(--color-gauge-ex); }
 
 /* 個別ステータス: ゲージの部分の背景 */
 .MuiBadge-root + div > div > div > div:nth-of-type(2) > div:nth-of-type(1) {
     width: var(--status-width);
     height: var(--status-height);
 }
+
+/* 追加ステータス: 大本 */
+.MuiBadge-root + div > div > div:nth-of-type(4) {
+    left: 70px;
+    top: 90px;
+}
+
+/* 追加ステータス: ラベル */
+.MuiBadge-root + div > div > div:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(1) {
+    overflow: visible;
+    position: absolute;
+    text-align: right;
+    left: 10px;
+    top: 25px;
+    width: 100px;
+    color: var(--color-text-ex);
+    font-size: 18pt;
+    font-family: "Playball", serif !important;
+    font-weight: 900 !important;
+    font-style: italic !important;
+    text-shadow: var(--text-border);
+    z-index: 500;
+}
+
+/* 追加ステータス: 分母 */
+.MuiBadge-root + div > div > div:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) { font-size: 0; }
+
+/* 追加ステータス: 分子 */
+.MuiBadge-root + div > div > div:nth-of-type(4) > div:nth-of-type(1) > p:nth-of-type(2) > span {
+    overflow: visible;
+    position: absolute;
+    text-align: right;
+    left: 0px;
+    top: 0px;
+    width: 50px;
+    color: var(--color-text-ex);
+    font-size: 36pt;
+    font-family: "Playball", serif !important;
+    font-weight: 900 !important;
+    font-style: italic !important;
+    text-shadow: var(--text-border);
+    z-index: 400;
+}
+
+/* 追加ステータス: ゲージは非表示 */
+.MuiBadge-root + div > div > div:nth-of-type(4) > div:nth-of-type(2) { display: none; }
