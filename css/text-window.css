@@ -15,6 +15,9 @@
 @import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/timer.css");
 @import url("https://yudukiak.github.io/ccfoliaCSS/CSS/asset/volume.css");
 
+/* フォント */
+@import url('https://fonts.googleapis.com/css2?family=Playball&family=Yusei+Magic&display=swap');
+
 :root {
     --balloon-width: 960px;
     --balloon-height: 240px;
@@ -81,22 +84,31 @@ div[tabindex="0"] > .MuiPaper-root {
 /* 名前 */
 .MuiTypography-subtitle2 {
     display: block;
-    font-size: var(--font-size-name);
     color: var(--font-color);
+    font-family: "Yusei Magic", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: var(--font-size-name);
     z-index: 300;
 }
 
 /* ダイス結果 */
 .MuiTypography-body2 {
     display: block;
-    font-size: var(--font-size-name);
     color: var(--font-color);
+    font-family: "Yusei Magic", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: var(--font-size-name);
     z-index: 300;
 }
 
 /* ダイス結果 (成功) */
 .css-1l6qhgm {
     color: var(--font-color);
+    font-family: "Yusei Magic", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
     text-shadow:
         0px 0px 2px var(--font-color-success),
         0px 0px 4px var(--font-color-success),
@@ -108,6 +120,9 @@ div[tabindex="0"] > .MuiPaper-root {
 /* ダイス結果 (失敗) */
 .css-1j13mke {
     color: var(--font-failure);
+    font-family: "Yusei Magic", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
     text-shadow:
         0px 0px 2px var(--font-color-failure),
         0px 0px 4px var(--font-color-failure),
@@ -118,13 +133,20 @@ div[tabindex="0"] > .MuiPaper-root {
 
 /* 本文 */
 .MuiTypography-body1 {
-    font-size: var(--font-size-text);
     color: var(--font-color);
+    font-family: "Yusei Magic", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: var(--font-size-text);
     z-index: 300;
 }
 
 /* ダイス */
 .MuiPaper-root > .MuiPaper-root > div:nth-child(1) {
+    color: var(--font-color);
+    font-family: "Yusei Magic", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
     margin-bottom: var(--image-margin);
     z-index: 300;
 }
